@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>To-do List</title>
+</head>
+<body>
+    <h1>To-do List</h1>
+    <ul>
+        {% for task in tasks %}
+            <li><a href="{% url 'task_detail' task_id=task.id %}">{{ task.title }}</a> ({{ task.get_status_display }})</li>
+        {% empty %}
+            <li>No tasks found.</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'task_create' %}">Create Task</a>
+</body>
+</html>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Update Task</title>
+</head>
+<body>
+    <h1>Update Task</h1>
+    <form method="post" action="{% url 'task_update' task_id=task.id %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+
+        <button type="submit">Update</button>
+    </form>
+    <a href="{% url 'task_detail' task_id=task.id %}">Cancel</a>
+</body>
+</html>
