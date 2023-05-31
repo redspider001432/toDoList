@@ -25,7 +25,9 @@ class TaskForm(forms.ModelForm):
     def clean_tags(self):
         tags = self.cleaned_data.get('tags')
         if tags:
-            tags = [tag.strip() for tag in tags.split(',')] # Split tags by comma and remove leading/trailing spaces
+            if isinstance(tags, list):  # Check if tags are a list of integers
+                tags = [str(tag) for tag in tags]  # Convert integers to strings
+            tags = [tag.strip() for tag in tags.split(',')]  # Split tags by comma and remove leading/trailing spaces
         return tags if tags else []
     
     def save(self, commit=True):
@@ -34,7 +36,7 @@ class TaskForm(forms.ModelForm):
         if tags:
             instance.save()
             instance.tags.clear()
-            for tag in tags:
+            for tag in tags.split(','):
                 tag_obj, _ = Tag.objects.get_or_create(name=tag)
                 instance.tags.add(tag_obj)
         else:
