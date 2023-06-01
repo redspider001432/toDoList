@@ -18,9 +18,8 @@ This is a simple ToDoList application built with Django.
 7. Access the application in your web browser at http://localhost:8000.
 
 ## Usage
-* To create a new ToDo item, click on the "Add Task" button on the homepage and fill in the required information.
-* To view details of a specific ToDo item, click on its title in the task list.
-* To update a ToDo item, click on the "Edit" button on the task detail page and make the desired changes.
+* To create a new ToDo item, click on the "Create Task" button on the homepage and fill in the required information.
+* To update a ToDo item, click on the "Update" button on the task detail page and make the desired changes.
 * To delete a ToDo item, click on the "Delete" button on the task detail page.
 
 ## API Endpoints
