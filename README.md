@@ -32,4 +32,5 @@ This is a simple ToDoList application built with Django.
 
 ## Credentials
 username: admin
+
 password: admin@123
