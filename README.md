@@ -10,7 +10,7 @@ This is a simple ToDoList application built with Django.
 ```python -m venv myenv```
 ```source myenv/bin/activate```
 4. Install the project dependencies:
-``` pip install -r requiments.txt```
+``` pip install -r requirements.txt```
 5. Apply database migrations:
 ``` python manage.py migrate```
 6. Start the development server:
