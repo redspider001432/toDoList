@@ -30,3 +30,7 @@ This is a simple ToDoList application built with Django.
 * GET /api/tasks/{task_id}/ - Retrieve details of a specific task.
 * PUT /api/tasks/{task_id}/update/ - Update a task.
 * DELETE /api/tasks/{task_id}/delete/ - Delete a task.
+
+## Credentials
+username: admin
+password: admin@123
