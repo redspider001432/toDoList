@@ -16,11 +16,6 @@ class Task(models.Model):
     tags = models.ManyToManyField('Tag', blank=True)
     status = models.CharField(max_length=10, choices=STATUS_CHOICES, default='OPEN')
 
-    def save(self, *args, **kwargs):
-        if self.due_date and self.timestamp and self.timestamp > self.due_date:
-            raise ValueError("Due Date cannot be before the Timestamp created.")
-        super().save(*args, **kwargs)
-
     def __str__(self):
         return f"{self.title} ({', '.join(tag.name for tag in self.tags.all())})"
     
